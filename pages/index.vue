@@ -1,87 +1,117 @@
 <template>
   <div>
     <!-- Hero Section -->
-    <section
-      class="relative bg-gradient-to-br from-blue-600 via-purple-600 to-indigo-700 text-white overflow-hidden"
-    >
-      <div class="absolute inset-0 bg-black/20"></div>
+    <section class="relative text-white overflow-hidden">
+      <div class="absolute inset-0 bg-black"></div>
       <div
         class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32"
       >
-        <div class="text-center">
-          <ClientOnly>
-            <div
-              v-motion
-              :initial="{ opacity: 0, y: 50 }"
-              :enter="{ opacity: 1, y: 0, transition: { duration: 800 } }"
-              class="mb-8"
-            >
-              <h1 class="text-4xl md:text-6xl font-bold mb-6">
-                Hi, 我是
-                <span
-                  class="bg-gradient-to-r from-yellow-400 to-orange-400 bg-clip-text text-transparent"
-                >
-                  资深前端工程师
-                </span>
-              </h1>
-              <p class="text-xl md:text-2xl text-blue-100 max-w-3xl mx-auto">
-                专注于现代 Web 技术栈，热爱分享前端开发经验与技术洞察
-              </p>
-            </div>
-            <template #fallback>
-              <div class="mb-8">
+        <Vortex
+          background-color="black"
+          :range-y="800"
+          :particle-count="500"
+          :base-hue="120"
+          class="flex size-full flex-col items-center justify-center px-2 py-4 md:px-10"
+        >
+          <div class="text-center">
+            <ClientOnly>
+              <div
+                v-motion
+                :initial="{ opacity: 0, y: 50 }"
+                :enter="{ opacity: 1, y: 0, transition: { duration: 800 } }"
+                class="mb-8"
+              >
                 <h1 class="text-4xl md:text-6xl font-bold mb-6">
                   Hi, 我是
                   <span
                     class="bg-gradient-to-r from-yellow-400 to-orange-400 bg-clip-text text-transparent"
                   >
-                    资深前端工程师
+                    huangweiqiang
                   </span>
                 </h1>
                 <p class="text-xl md:text-2xl text-blue-100 max-w-3xl mx-auto">
                   专注于现代 Web 技术栈，热爱分享前端开发经验与技术洞察
                 </p>
               </div>
-            </template>
-          </ClientOnly>
+              <template #fallback>
+                <div class="mb-8">
+                  <h1 class="text-4xl md:text-6xl font-bold mb-6">
+                    Hi, 我是
+                    <span
+                      class="bg-gradient-to-r from-yellow-400 to-orange-400 bg-clip-text text-transparent"
+                    >
+                      huangweiqiang
+                    </span>
+                  </h1>
+                  <p
+                    class="text-xl md:text-2xl text-blue-100 max-w-3xl mx-auto"
+                  >
+                    专注于现代 Web 技术栈，热爱分享前端开发经验与技术洞察
+                  </p>
+                </div>
+              </template>
+            </ClientOnly>
 
-          <ClientOnly>
-            <div
-              v-motion
-              :initial="{ opacity: 0, y: 30 }"
-              :enter="{
-                opacity: 1,
-                y: 0,
-                transition: { duration: 800, delay: 400 },
-              }"
-              class="flex flex-col sm:flex-row gap-4 justify-center"
-            >
-              <NuxtLink to="/blog" class="btn btn-primary"> 阅读博客 </NuxtLink>
-              <NuxtLink to="/projects" class="btn btn-secondary">
-                查看项目
-              </NuxtLink>
-            </div>
-            <template #fallback>
-              <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <NuxtLink to="/blog" class="btn btn-primary">
+            <ClientOnly>
+              <div
+                v-motion
+                :initial="{ opacity: 0, y: 30 }"
+                :enter="{
+                  opacity: 1,
+                  y: 0,
+                  transition: { duration: 800, delay: 400 },
+                }"
+                class="flex flex-col sm:flex-row gap-4 justify-center"
+              >
+                <UiGradientButton
+                  as="NuxtLink"
+                  to="/blog"
+                  variant="default"
+                  size="lg"
+                  class="min-w-[120px] transform hover:scale-105 transition-transform"
+                >
+                  <Icon name="heroicons:book-open" class="w-5 h-5" />
                   阅读博客
-                </NuxtLink>
-                <NuxtLink to="/projects" class="btn btn-secondary">
+                </UiGradientButton>
+                <UiGradientButton
+                  as="NuxtLink"
+                  to="/projects"
+                  variant="purple"
+                  size="lg"
+                  class="min-w-[120px] transform hover:scale-105 transition-transform"
+                >
+                  <Icon name="heroicons:code-bracket" class="w-5 h-5" />
                   查看项目
-                </NuxtLink>
+                </UiGradientButton>
               </div>
-            </template>
-          </ClientOnly>
-        </div>
+              <template #fallback>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                  <UiGradientButton
+                    as="NuxtLink"
+                    to="/blog"
+                    variant="default"
+                    size="lg"
+                    class="min-w-[120px] transform hover:scale-105 transition-transform"
+                  >
+                    <Icon name="heroicons:book-open" class="w-5 h-5" />
+                    阅读博客
+                  </UiGradientButton>
+                  <UiGradientButton
+                    as="NuxtLink"
+                    to="/projects"
+                    variant="purple"
+                    size="lg"
+                    class="min-w-[120px] transform hover:scale-105 transition-transform"
+                  >
+                    <Icon name="heroicons:code-bracket" class="w-5 h-5" />
+                    查看项目
+                  </UiGradientButton>
+                </div>
+              </template>
+            </ClientOnly>
+          </div>
+        </Vortex>
       </div>
-
-      <!-- 装饰性背景元素 -->
-      <div
-        class="absolute top-1/4 left-1/4 w-72 h-72 bg-white/10 rounded-full blur-3xl"
-      ></div>
-      <div
-        class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-400/20 rounded-full blur-3xl"
-      ></div>
     </section>
 
     <!-- 最新文章 -->
@@ -273,6 +303,8 @@
 </template>
 
 <script setup>
+import Vortex from '@/components/ui/Vortex.vue'
+
 // SEO Meta
 useHead({
   title: '前端博客 - 资深前端工程师的技术分享',

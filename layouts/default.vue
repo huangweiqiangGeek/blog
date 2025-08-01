@@ -22,6 +22,7 @@
             <NuxtLink to="/blog" class="nav-link">博客</NuxtLink>
             <NuxtLink to="/projects" class="nav-link">项目</NuxtLink>
             <NuxtLink to="/about" class="nav-link">关于我</NuxtLink>
+            <NuxtLink to="/ui-test" class="nav-link">UI测试</NuxtLink>
           </div>
 
           <!-- 主题切换和移动端菜单 -->
@@ -58,6 +59,7 @@
             <NuxtLink to="/blog" class="mobile-nav-link">博客</NuxtLink>
             <NuxtLink to="/projects" class="mobile-nav-link">项目</NuxtLink>
             <NuxtLink to="/about" class="mobile-nav-link">关于我</NuxtLink>
+            <NuxtLink to="/ui-test" class="mobile-nav-link">UI测试</NuxtLink>
           </div>
         </div>
       </nav>
